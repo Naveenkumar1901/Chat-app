@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f0f2f5;
+  background: #b5b5b6;
 }
 
 .container {
@@ -122,6 +122,14 @@
   width: 100%;
   padding: 0 10px;
 }
+.arrow {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  color: #7d7790;
+  font-size: 10px;
+}
+
 .ownermsg-time {
   display: flex;
   justify-content: flex-end;
@@ -210,3 +218,4 @@
   font-size: 14px;
   font-weight: bold;
 }
+

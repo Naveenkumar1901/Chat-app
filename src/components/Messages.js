@@ -7,6 +7,7 @@ import {
   orderBy,
   query,
 } from "firebase/firestore";
+import { AiOutlineDown } from "react-icons/ai";
 import moment from "moment";
 
 let snapMessages;
@@ -38,6 +39,7 @@ const Messages = () => {
     getMessages();
     return () => snapMessages(); // unsubcribe listener
   }, []);
+ 
 
   const OwnerMessage = ({ message, createdAt, user }) => (
     <div className="message-wrapper">
@@ -65,6 +67,7 @@ const Messages = () => {
       </p>
     </div>
   );
+
   return (
     <div className="messages">
       {loading ? (

@@ -1,21 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { db } from "../Firebase-config";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { IoMdSend } from "react-icons/io";
+
 const Input = () => {
   const [text, setText] = useState("");
-  const [file, setFile] = useState("");
-  const [img, setImg] = useState([]);
+  const inputRef = useRef(null);
   const handleSend = async () => {
-    setText("");
     try {
       if (text.length) {
+        setText("");
         const user = JSON.parse(localStorage.getItem("currentUser"));
-        await addDoc(collection(db, "messages"), {
-          message: text,
-          user: user.user.email,
-          createdAt: serverTimestamp()
-        });
+          await addDoc(collection(db, "messages"), {
+            message: text,
+            user: user.user.email,
+            createdAt: serverTimestamp(),
+          });
       } else {
         //nothing
       }
@@ -23,15 +23,25 @@ const Input = () => {
       console.log(error);
     }
   };
+
   return (
     <div className="chat-input">
-      <input
-        type="text"
-        className="input-msg"
-        placeholder="Type Something..."
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSend();
+        }}
+        style={{ width: "100%" }}
+      >
+        <input
+          type="text"
+          className="input-msg"
+          placeholder="Type Something..."
+          value={text}
+          ref={inputRef}
+          onChange={(e) => setText(e.target.value)}
+        />
+      </form>
       <div className="send-button">
         <IoMdSend onClick={handleSend} />
       </div>

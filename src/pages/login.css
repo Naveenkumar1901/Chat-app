@@ -1,5 +1,5 @@
 .innerContainer {
-  background-color: #EFEAE2;
+  background-color: #efeae2;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -7,54 +7,64 @@
 }
 
 .containerWrapper {
-  background-color: #00A481;
-  width: 25%;
-  height: 70%;
+  background-color: #00a481;
+  width: 350px;
+  height: 400px;
   padding: 20px 50px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 .logo {
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: bold;
   font-size: 30px;
   display: flex;
   justify-content: center;
+  margin: 10px 0;
 }
 
 .login-title {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 20px;
   justify-content: center;
   display: flex;
   font-weight: bold;
+  margin: 10px 0;
 }
 
 .login-form {
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+}
+.login-three-quarter-spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #20e987;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.5s linear 0s infinite;
+}
+
+.login-spinner-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  
+  background-color: transparent;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 
 .login-email {
-  width:100%;
-  padding: 10px;;
-  border: none;
-  border-bottom: 1px solid blueviolet;
-  border-radius: 5px;
-  margin: 10px 0;
-  outline: none;
-}
-
-.login-password {
-  width: 100%;
   padding: 10px;
   border: none;
   border-bottom: 1px solid blueviolet;
@@ -63,35 +73,59 @@
   outline: none;
 }
 
+.login-password {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px 0;
+  outline: none;
+}
+
 .login-password::placeholder {
-  color: #00A481;
+  color: #00a481;
 }
 
 .login-email::placeholder {
-  color: #00A481;
+  color: #00a481;
 }
 
 .login-button {
-  background-color: #20E987;
+  background-color: #20e987;
   color: white;
+  width: 75px;
   padding: 10px 20px;
   font-weight: bold;
   border: none;
   cursor: pointer;
   border-radius: 10px;
+}
+
+.loginbutton {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.login-error-msg {
+  color: #20e987;
+  display: flex;
+  justify-content: center;
   margin: 10px 0;
 }
 
 .text {
-  color: #F9FDFC;
+  color: #ffffff;
   font-size: 15px;
   display: flex;
   justify-content: center;
+  margin: 10px 0;
 }
 
-.register{
-color: #F9FDFC;
-text-decoration: none;
-margin-left: 10px;
-
+.register {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 10px;
+}
+.register:hover {
+  color: #20e987;
 }

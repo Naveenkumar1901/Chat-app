@@ -4,7 +4,7 @@ import Input from "./Input";
 import Addlogo from "../image/applogo.jpeg";
 import { navigate, useNavigate } from "react-router-dom";
 const Chat = () => {
- const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <div className="chat">
       <div className="title-bar">
