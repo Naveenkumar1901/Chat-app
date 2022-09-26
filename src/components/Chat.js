@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Messages from "./Messages";
 import Input from "./Input";
-import Addlogo from "../image/applogo.jpeg";
-import { navigate, useNavigate } from "react-router-dom";
+import Addlogo from "../image/logo.png";
+import { useNavigate } from "react-router-dom";
 const Chat = () => {
   const navigate = useNavigate();
   return (
@@ -20,7 +20,7 @@ const Chat = () => {
             navigate("/login");
           }}
         >
-          <p className="logout">Log out</p>{" "}
+          <p className="logout">Log out</p>
         </button>
       </div>
       <Messages />

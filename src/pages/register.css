@@ -69,16 +69,17 @@
   padding: 10px;
   border: none;
   border-radius: 5px;
-  margin: 10px 0;
+  margin: 10px 25px;
   outline: none;
-  margin: 10px 0;
+  width: 200px;
 }
 .register-password {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  margin: 10px 0;
+  margin: 10px 25px;
   outline: none;
+  width: 200px;
 }
 
 .register-email::placeholder {

@@ -20,10 +20,18 @@ code {
   width: 7px;
 }
 ::-webkit-scrollbar-thumb {
-    background: #C3C2BE;
-    border-radius: 20px;
+  background: #c3c2be;
+  border-radius: 20px;
 }
 
 ::-webkit-scrollbar-track {
+}
 
+@media only screen and (min-width: 1224px) {
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+}
+
+@media screen and (min-width: 320px) and (max-width: 479px) {
 }

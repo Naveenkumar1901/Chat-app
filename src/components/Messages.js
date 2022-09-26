@@ -2,12 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { db } from "../Firebase-config";
 import {
   collection,
-  getDocs,
   onSnapshot,
   orderBy,
   query,
 } from "firebase/firestore";
-import { AiOutlineDown } from "react-icons/ai";
 import moment from "moment";
 
 let snapMessages;
@@ -37,7 +35,7 @@ const Messages = () => {
 
   useEffect(() => {
     getMessages();
-    return () => snapMessages(); // unsubcribe listener
+    return () => snapMessages(); 
   }, []);
  
 

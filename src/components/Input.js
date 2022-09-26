@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {  useRef, useState } from "react";
 import { db } from "../Firebase-config";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { IoMdSend } from "react-icons/io";
@@ -17,7 +17,7 @@ const Input = () => {
             createdAt: serverTimestamp(),
           });
       } else {
-        //nothing
+      
       }
     } catch (error) {
       console.log(error);

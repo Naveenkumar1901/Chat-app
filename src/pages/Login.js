@@ -36,7 +36,7 @@ const Login = () => {
     } catch (err) {
       setLoading(false);
       setError(true);
-      console.log("Some thing went wrong");
+      console.log("Something went wrong");
     }
   };
 
@@ -53,30 +53,33 @@ const Login = () => {
           <div className="login-box">
             <span className="logo">Group Chat</span>
             <span className="login-title">Login</span>
-            <form className="login-form">
-              <input
-                type="email"
-                className="login-email"
-                placeholder="email"
-                onChange={(event) => {
-                  setLoginEmail(event.target.value);
-                }}
-              />
-              <input
-                type="password"
-                className="login-password"
-                placeholder="password"
-                onChange={(event) => {
-                  setLoginPassword(event.target.value);
-                }}
-              />
+            <form
+              className="login-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                login();
+              }}
+              style={{ width: "100%" }}
+            >
+                <input
+                  type="email"
+                  className="login-email"
+                  placeholder="email"
+                  onChange={(event) => {
+                    setLoginEmail(event.target.value);
+                  }}
+                />
+                <input
+                  type="password"
+                  className="login-password"
+                  placeholder="password"
+                  onChange={(event) => {
+                    setLoginPassword(event.target.value);
+                  }}
+                />
               <div className="loginbutton">
-                <button
-                  className="login-button"
-                  onClick={login}
-                  disabled={loading}
-                >
-                  Login
+                <button className="login-button" onClick={login} disabled={loading}>
+                  Log In
                 </button>
               </div>
               {err && (

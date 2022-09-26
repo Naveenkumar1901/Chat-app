@@ -13,7 +13,6 @@
   padding: 20px 50px;
   border-radius: 20px;
   display: flex;
-  flex-direction: column;
 }
 
 .logo {
@@ -38,6 +37,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .login-three-quarter-spinner {
   width: 30px;
   height: 30px;
@@ -55,6 +55,7 @@
   align-items: center;
   background-color: transparent;
 }
+
 @keyframes spin {
   from {
     transform: rotate(0);
@@ -67,18 +68,20 @@
 .login-email {
   padding: 10px;
   border: none;
-  border-bottom: 1px solid blueviolet;
   border-radius: 5px;
-  margin: 10px 0;
+  margin: 10px 25px;
   outline: none;
+  display: flex;
+  width: 200px; 
 }
 
 .login-password {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  margin: 10px 0;
+  margin: 10px 25px;
   outline: none;
+  width: 200px;
 }
 
 .login-password::placeholder {
@@ -92,7 +95,7 @@
 .login-button {
   background-color: #20e987;
   color: white;
-  width: 75px;
+  width: 100px;
   padding: 10px 20px;
   font-weight: bold;
   border: none;

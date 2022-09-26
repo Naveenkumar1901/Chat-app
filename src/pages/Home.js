@@ -7,7 +7,7 @@ const Home = () => {
   const navigate = useNavigate();
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
-    navigate("/home");
+   if (user) navigate("/home");
   }, []);
 
   return (

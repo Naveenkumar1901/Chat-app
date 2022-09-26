@@ -18,8 +18,11 @@ const Register = () => {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [err, setError] = useState(false);
+  const [loading, setLoading] = useState(false); 
   const register = async (e) => {
     e.preventDefault();
+    if (!registerEmail.length || !registerPassword.length) return;
+    setLoading(true);
     try {
       const user = await createUserWithEmailAndPassword(
         auth,
@@ -28,19 +31,14 @@ const Register = () => {
       );
       localStorage.setItem("currentUser", JSON.stringify(user));
       navigate("/login");
+      setLoading(false);
       console.log(user);
     } catch (err) {
+      setLoading(false);
       setError(true);
       console.log("Something went wrong");
     }
   };
-  const [loading, setLoading] = useState(true); //need to understand
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  });
-
 
   return (
     <div className="innerContainer">
@@ -53,7 +51,14 @@ const Register = () => {
           <div className="register-box">
             <span className="logo">Group Chat</span>
             <span className="register-title">Register</span>
-            <form className="register-form">
+            <form
+              className="register-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                register();
+              }}
+              style={{ width: "100%" }}
+            >
               <input
                 type="text"
                 className="register-email"
@@ -63,7 +68,7 @@ const Register = () => {
                 }}
               />
               <input
-                type="text"
+                type="password"
                 className="register-password"
                 placeholder="password"
                 onChange={(event) => {
@@ -71,18 +76,22 @@ const Register = () => {
                 }}
               />
               <div className="signupbutton">
-                <button className="signup-button" onClick={register}>
-                  Sign up
+                <button
+                  className="signup-button"
+                  onClick={register}
+                  disabled={loading}
+                >
+                  Sign Up
                 </button>
               </div>
               {err && (
                 <span className="register-error-msg">
-                  Email/Password Format Invalid!
+                  Email/Password format invalid!
                 </span>
               )}
             </form>
             <p className="ques-text">
-              Do you have an account?
+              Already have an account?
               <Link className="login-link" to="/login">
                 Login
               </Link>

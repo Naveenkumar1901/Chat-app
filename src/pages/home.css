@@ -33,6 +33,7 @@
   justify-content: space-between;
   color: #ffffff;
 }
+
 .title-bar {
   width: 100%;
   height: 14%;
@@ -50,6 +51,7 @@
   font-size: 20px;
   color: #ffffff;
 }
+
 .group-header {
   display: flex;
   justify-content: flex-start;
@@ -85,6 +87,7 @@
   padding: 10px;
   height: calc(100% - 121px);
   overflow: auto;
+  overflow-x: hidden;
   scrollbar-width: thin;
   background-color: #efeae2;
 }
@@ -122,13 +125,6 @@
   width: 100%;
   padding: 0 10px;
 }
-.arrow {
-  display: flex;
-  justify-content: flex-end;
-  cursor: pointer;
-  color: #7d7790;
-  font-size: 10px;
-}
 
 .ownermsg-time {
   display: flex;
@@ -136,6 +132,7 @@
   color: #7d7790;
   margin-top: 3px;
 }
+
 .thirdpartymsg-time {
   display: flex;
   justify-content: flex-end;
